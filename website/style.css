@@ -1,0 +1,41 @@
+body {
+	font-family: sans-serif;
+}
+
+.emtable {
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #a7cece;
+	padding: 25px;
+	margin: 30px;
+}
+
+a {
+	color: blue;
+}
+#emHeader {
+	
+}
+#emInput {
+	float: left;
+	width: 33%;
+	background-color: #a7c0c0;
+}
+#emStudents {
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	width: 33%;
+	float: right;
+	background-color: #a0b0b0;
+}
+
+
+#tableResults {
+	
+}
+
+#emStudents h2 {
+	color: red;
+}
