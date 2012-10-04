@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "2.5.x", 
-    "connect": "2.5.x",
     "mysql": "2.0.x"
   },
   "engines": {

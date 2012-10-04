@@ -2,13 +2,11 @@ var express = require ('express');
 var mysql = require('mysql');
 var config = require('./config.json');
 console.log('db connection: '+config.database);
-var connect = require('connect');
 
+var app = express.createServer();
 
-app = express.createServer();
-
-app.use(connect.static(__dirname + '/website'));
-app.use(connect.static(__dirname + '/scripts'));
+app.use(express.static(__dirname + '/website'));
+app.use(express.static(__dirname + '/scripts'));
 
 var db = mysql.createConnection(config);
 //app.use(express.bodyParser());
