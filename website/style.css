@@ -2,6 +2,28 @@ body {
 	font-family: sans-serif;
 }
 
+#mainHeader
+{
+    height:100px;
+    background-color: #FDFDFD;
+}
+#mainHeaderTitle
+{
+    float:left;
+    background-color: #FAFAFA;
+}
+#mainHeaderSignin
+{
+    float:right;
+    text-align:right;
+    width:33%;
+    background-color: #FAFAFA;
+}
+#mainContent
+{
+
+}
+
 .emtable {
 	border-color: black;
 	border-width: 1px;

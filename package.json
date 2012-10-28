@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "2.5.x", 
-    "mysql": "2.0.x"
+    "mysql": "2.0.x",
+    "passport": "0.1.12",
+    "passport-local": "0.1.6"
   },
   "engines": {
     "node": "0.8.x",

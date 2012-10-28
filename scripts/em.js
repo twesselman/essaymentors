@@ -1,21 +1,33 @@
-
-
 $(document).ready(function() {
 	$('#getStudents').click(readStudents);
 	$('#signUp').click(signUp);
 	$('#signIn').click(signIn);
 });
 
+$('#createform2').submit(function() {
+    alert('hi');
+});
+
+function onCreateStudent()
+{
+	var xmlHttp = null;
+	sUrl = "/createstudent";
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", sUrl, false );
+    xmlHttp.send( null );
+}
+
 function signUp() {
 	alert('signUp');
-};
+}
 
 function signIn() {
 	alert('signIn');
-};
+}
 
 function createStudent() {
-	var firstname = document.getElementById("firstname").value;
+	// no longer used
+    var firstname = document.getElementById("firstname").value;
 	var lastname = document.getElementById("lastname").value;
 	var xmlHttp = null;
 	sUrl = "/createstudent?firstname=" + firstname + "&lastname=" + lastname;

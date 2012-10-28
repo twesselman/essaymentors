@@ -7,74 +7,65 @@
 <script type="text/javascript" src="em.js"></script>
 
 <body>
-	
+
+
+<div id="mainHeader">    
+
+<div id="mainHeaderTitle">
+<img src="http://essaymentors.com/wp-content/uploads/2012/05/essay-mentor-logo-orange-for-website.jpg"><img>
+</div> <!-- mainHeaderTitle -->
+
+<div id="mainHeaderSignin">
 <a id="signUp" href="signup.html">Sign up!</a>
-<br>
+<br><br>
 <a id="signIn" href="signin.html">Already have an account? Sign in</a>
-	
+</div> <!-- mainHeaderSignin -->
+
+</div> <!-- mainheader -->
+
+<div id="mainContent">
+
+<h1>New Login!</h1>
+<form action="/login", method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/><br/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="text" name="password"/><br/>
+    </div>
+    <div>
+        <input type="submit" value="Log In"/>
+    </div>
+</form>
+
 <div id="emHeader">
-<h1>Essay Mentors Live - from Cloud 9 express only</h1>
+<form action="/createstudent", method="POST">
+    <br/><label>First:</label>
+    <input id="firstname" type="text" name="student[firstname]"/>
+    <br/><label>Last:</label>
+    <input id="lastname" type="text" name="student[lastname]"/>
+    <br/><label>Username:</label>
+    <input id="username" type="text" name="student[username]"/>
+    <br/><label>Password:</label>
+    <input id="password" type="text" name="student[password]"/>
+    <br/><input type="submit", value="Submit">
+</form>
 
-
-<label>First:</label>
-<input id="firstname" type="text" name="firstname">
-<label>Last:</label>
-<input id="lastname" type="text" name="lastname">
-<button onclick="createStudent()">Create Student</button>
 
 <p>
 <button id="getStudents">Get Students</button>
 
-</div>
+</div> <!-- emHeader -->
 
 <div id="emInput">
 	
-DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. Key features:
+text goes over here
 
-Variable length pagination
-On-the-fly filtering
-Multi-column sorting with data type detection
-Smart handling of column widths
-Display data from almost any data source
-DOM, Javascript array, Ajax file and server-side processing (PHP, C#, Perl, Ruby, AIR, Gears etc)
-Scrolling options for table viewport
-Fully internationalisable
-jQuery UI ThemeRoller support
-Rock solid - backed by a suite of 2900 unit tests
-Wide variety of plug-ins inc. Editor, TableTools, FixedColumns and more
-It's free!
-Show moreDataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. Key features:
+</div> <!-- emInput -->
 
-Variable length pagination
-On-the-fly filtering
-Multi-column sorting with data type detection
-Smart handling of column widths
-Display data from almost any data source
-DOM, Javascript array, Ajax file and server-side processing (PHP, C#, Perl, Ruby, AIR, Gears etc)
-Scrolling options for table viewport
-Fully internationalisable
-jQuery UI ThemeRoller support
-Rock solid - backed by a suite of 2900 unit tests
-Wide variety of plug-ins inc. Editor, TableTools, FixedColumns and more
-It's free!
-Show moreDataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. Key features:
-
-Variable length pagination
-On-the-fly filtering
-Multi-column sorting with data type detection
-Smart handling of column widths
-Display data from almost any data source
-DOM, Javascript array, Ajax file and server-side processing (PHP, C#, Perl, Ruby, AIR, Gears etc)
-Scrolling options for table viewport
-Fully internationalisable
-jQuery UI ThemeRoller support
-Rock solid - backed by a suite of 2900 unit tests
-Wide variety of plug-ins inc. Editor, TableTools, FixedColumns and more
-It's free!
-Show more
-</div>
-
-<div id=emStudents>
+<div id="emStudents">
 	
 <h2>Results:</h2>
 <br>
@@ -89,6 +80,8 @@ Show more
 	</tr>
 </table>
 
-</div>
+</div> <!-- emStudents -->
+</div> <!-- mainContent -->
+
 </body>
 </html>
