@@ -45,7 +45,6 @@ function readStudents() {
     xmlHttp.send( null );
     var resultsStudents="";
     var students=xmlHttp.responseText;
-    alert(students);
     var arrayStudents = JSON.parse(students);
 
     var r = new Array();

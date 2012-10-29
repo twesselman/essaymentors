@@ -35,3 +35,4 @@
 {"ts":1351481758558,"patch":[[{"diffs":[[0,"rray"],[-1,"[]"],[0,";\n  "]],"start1":1220,"start2":1220,"length1":10,"length2":8}]],"length":1628,"saved":false}
 {"ts":1351481760583,"patch":[[{"diffs":[[0,"ew Array"],[1,"()"],[0,";\n    va"]],"start1":1216,"start2":1216,"length1":16,"length2":18}]],"length":1630,"saved":false}
 {"ts":1351481774288,"patch":[[{"diffs":[[0,"seText;\n"],[-1,"//"],[0,"    aler"]],"start1":1125,"start2":1125,"length1":18,"length2":16}]],"length":1628,"saved":false}
+{"ts":1351483395952,"patch":[[{"diffs":[[0,"xt;\n"],[-1,"    alert(students);\n"],[0,"    "]],"start1":1129,"start2":1129,"length1":29,"length2":8}]],"length":1607,"saved":false}
