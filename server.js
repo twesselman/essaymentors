@@ -88,14 +88,37 @@ app.get('/loggedin', function (req, res, next) {
 // get students
 app.get('/students', function (req, res, next) {
     console.log('get students called');
-    app.students.findAll({ }, function(err, users) {
-        if (err) {
-            console.log('error getting students');
-            res.send('error getting students');
-        }
-        res.send(users);
+    
+    app.students.find().toArray(function(err, documents) {
+        console.log(documents);
+        res.send(documents);
     });
 });
+
+function holder(res) {
+
+
+    var cursor = app.students.find({ });
+    res.write('{');
+    cursor.each(function(err, item) {
+        console.log(item);
+        res.write(item.toString());
+    });
+    res.write('}');
+    res.end();
+
+
+    var stream = app.students.find({}).stream();
+        
+    stream.on('data', function(data) {
+        res.write(data);
+    });
+    
+    stream.on('end', function() {
+        res.end();
+    });
+}
+
 
 // student create
 app.post('/createstudent', function (req, res, next) {
