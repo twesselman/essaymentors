@@ -12,3 +12,8 @@
 {"ts":1351483245599,"patch":[[{"diffs":[[0,"ongodb\":"],[1," \"1.1.11\""],[0,"\n    \"pa"]],"start1":123,"start2":123,"length1":16,"length2":25}]],"length":262,"saved":false}
 {"ts":1351483246628,"patch":[[{"diffs":[[0,"\"1.1.11\""],[1,","],[0,"\n    \"pa"]],"start1":132,"start2":132,"length1":16,"length2":17}]],"length":263,"saved":false}
 {"ts":1351483250034,"patch":[[{"diffs":[[0,"\", \n"],[-1,"    \"mysql\": \"2.0.x\",\n"],[0,"    "]],"start1":91,"start2":91,"length1":30,"length2":8}]],"length":241,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1351541553887,"patch":[[{"diffs":[[0,"\"0.1.6\"\n"],[1,"    \"passport-facebook\"\n"],[0,"  },\n  \""]],"start1":168,"start2":168,"length1":16,"length2":40}]],"length":265,"saved":false}
+{"ts":1351541558067,"patch":[[{"diffs":[[0,"acebook\""],[1,": \"\""],[0,"\n  },\n  "]],"start1":191,"start2":191,"length1":16,"length2":20}]],"length":269,"saved":false}
+{"ts":1351541560251,"patch":[[{"diffs":[[0," \"0.1.6\""],[1,","],[0,"\n    \"pa"]],"start1":167,"start2":167,"length1":16,"length2":17}]],"length":270,"saved":false}
+{"ts":1351541582785,"patch":[[{"diffs":[[0,"book\": \""],[1,"0."],[0,"\"\n  },\n "]],"start1":195,"start2":195,"length1":16,"length2":18}]],"length":272,"saved":false}
+{"ts":1351541584017,"patch":[[{"diffs":[[0,"ok\": \"0."],[1,"1.4"],[0,"\"\n  },\n "]],"start1":197,"start2":197,"length1":16,"length2":19}]],"length":275,"saved":false}

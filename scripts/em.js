@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#getStudents').click(readStudents);
+    $('#getStudents').click(readStudents);
 	$('#signUp').click(signUp);
 	$('#signIn').click(signIn);
 });
@@ -65,4 +65,3 @@ function readStudents() {
 console.log(r.join(''));
 $('#tableResults').html(r.join('')); 
 }
-
