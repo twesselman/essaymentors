@@ -237,3 +237,23 @@
 {"ts":1351543059857,"patch":[[{"diffs":[[0,"e.log('validated"],[1," from "],[0,"');\n            "]],"start1":2906,"start2":2906,"length1":32,"length2":38}]],"length":5171,"saved":false}
 {"ts":1351543061080,"patch":[[{"diffs":[[0,"ed from "],[1,"FB"],[0,"');\n    "]],"start1":2920,"start2":2920,"length1":16,"length2":18}]],"length":5173,"saved":false}
 {"ts":1351543063582,"patch":[[{"diffs":[[0,"om F"],[-1,"B"],[1,"acebook"],[0,"');\n"]],"start1":2925,"start2":2925,"length1":9,"length2":15}]],"length":5179,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1351883164822,"patch":[[{"diffs":[[0," );\n    "],[1,"\n\n    "],[0,"\napp.get"]],"start1":3934,"start2":3934,"length1":16,"length2":22}]],"length":5185,"saved":false}
+{"ts":1351883166331,"patch":[[{"diffs":[[0,");\n    \n"],[1,"app."],[0,"\n    \nap"]],"start1":3935,"start2":3935,"length1":16,"length2":20}]],"length":5189,"saved":false}
+{"ts":1351883185070,"patch":[[{"diffs":[[0,"   \napp."],[1,"get('/logout', function (req, res)"],[0,"\n    \nap"]],"start1":3939,"start2":3939,"length1":16,"length2":50}]],"length":5223,"saved":false}
+{"ts":1351883188732,"patch":[[{"diffs":[[0,"eq, res)"],[1," {\n});"],[0,"\n    \nap"]],"start1":3973,"start2":3973,"length1":16,"length2":22}]],"length":5229,"saved":false}
+{"ts":1351883193741,"patch":[[{"diffs":[[0," res) {\n"],[1,"    \n"],[0,"});\n    "]],"start1":3976,"start2":3976,"length1":16,"length2":21}]],"length":5234,"saved":false}
+{"ts":1351883222155,"patch":[[{"diffs":[[0,") {\n    "],[1,"req.logOut();\n    req."],[0,"\n});\n   "]],"start1":3980,"start2":3980,"length1":16,"length2":38}]],"length":5256,"saved":false}
+{"ts":1351883228250,"patch":[[{"diffs":[[0,";\n    re"],[-1,"q."],[1,"s"],[0,"\n});\n   "]],"start1":4000,"start2":4000,"length1":18,"length2":17}]],"length":5255,"saved":false}
+{"ts":1351883229507,"patch":[[{"diffs":[[0,"\n    res"],[1,".r"],[0,"\n});\n   "]],"start1":4001,"start2":4001,"length1":16,"length2":18}]],"length":5257,"saved":false}
+{"ts":1351883232198,"patch":[[{"diffs":[[0,"   res.r"],[1,"edirect('/')"],[0,"\n});\n   "]],"start1":4003,"start2":4003,"length1":16,"length2":28}]],"length":5269,"saved":false}
+{"ts":1351883233240,"patch":[[{"diffs":[[0,"ect('/')"],[1,";"],[0,"\n});\n   "]],"start1":4015,"start2":4015,"length1":16,"length2":17}]],"length":5270,"saved":false}
+{"ts":1351883237799,"patch":[[{"diffs":[[0,"t('/');\n});\n"],[1,"        \napp.get('/logout', function (req, res) {\n    req.logOut();\n    res.redirect('/');\n});\n"],[0,"    \napp.get"]],"start1":4017,"start2":4017,"length1":24,"length2":119}]],"length":5365,"saved":false}
+{"ts":1351883240952,"patch":[[{"diffs":[[0,"     \napp.get('/"],[-1,"logout"],[1,"cu"],[0,"', function (req"]],"start1":4032,"start2":4032,"length1":38,"length2":34}]],"length":5361,"saved":false}
+{"ts":1351883243497,"patch":[[{"diffs":[[0,"get('/cu"],[1,"rrentuser"],[0,"', funct"]],"start1":4042,"start2":4042,"length1":16,"length2":25}]],"length":5370,"saved":false}
+{"ts":1351883259294,"patch":[[{"diffs":[[0,"  re"],[-1,"q.logOut();\n    res.redirect('/')"],[1,"s.send("],[0,";\n})"]],"start1":4086,"start2":4086,"length1":41,"length2":15}]],"length":5344,"saved":false}
+{"ts":1351883262219,"patch":[[{"diffs":[[0,"es.send("],[1,"req.user"],[0,";\n});\n  "]],"start1":4089,"start2":4089,"length1":16,"length2":24}]],"length":5352,"saved":false}
+{"ts":1351883264852,"patch":[[{"diffs":[[0,"req.user"],[1,")"],[0,";\n});\n  "]],"start1":4097,"start2":4097,"length1":16,"length2":17}]],"length":5353,"saved":false}
+{"ts":1351883276353,"patch":[[{"diffs":[[0,"req, res) {\n"],[1,"    console.log('get students called');\n    \n"],[0,"    res.send"]],"start1":4072,"start2":4072,"length1":24,"length2":69}]],"length":5398,"saved":false}
+{"ts":1351883278877,"patch":[[{"diffs":[[0,"req, res) {\n"],[1,"    console.log('get students called');\n    \n"],[0,"    req.logO"]],"start1":3972,"start2":3972,"length1":24,"length2":69}]],"length":5443,"saved":false}
+{"ts":1351883283534,"patch":[[{"diffs":[[0,"onsole.log('"],[-1,"get students"],[1,"logout"],[0," called');\n "]],"start1":3989,"start2":3989,"length1":36,"length2":30}]],"length":5437,"saved":false}
+{"ts":1351883288932,"patch":[[{"diffs":[[0,"onsole.log('"],[-1,"get students"],[1,"currentuser"],[0," called');\n "]],"start1":4128,"start2":4128,"length1":36,"length2":35}]],"length":5436,"saved":false}

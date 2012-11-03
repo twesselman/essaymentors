@@ -114,6 +114,19 @@ app.post('/login',
         )
     );
     
+app.get('/logout', function (req, res) {
+    console.log('logout called');
+    
+    req.logOut();
+    res.redirect('/');
+});
+        
+app.get('/currentuser', function (req, res) {
+    console.log('currentuser called');
+    
+    res.send(req.user);
+});
+    
 app.get('/loggedin', function (req, res, next) {
     res.send('logged in');
 });

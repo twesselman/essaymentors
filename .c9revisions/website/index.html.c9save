@@ -66,3 +66,46 @@
 {"ts":1351541488192,"patch":[[{"diffs":[[0,"<h1>Face"],[1,"book Login!</h1?"],[0,"\n\n<div i"]],"start1":1079,"start2":1079,"length1":16,"length2":32}]],"length":2025,"saved":false}
 {"ts":1351541489056,"patch":[[{"diffs":[[0,"gin!</h1"],[-1,"?"],[1,">"],[0,"\n\n<div i"]],"start1":1094,"start2":1094,"length1":17,"length2":17}]],"length":2025,"saved":false}
 {"ts":1351541489892,"patch":[[{"diffs":[[0,"in!</h1>"],[1,"\n<a href=\"/auth/facebook\">Login with Facebook</a>"],[0,"\n\n<div i"]],"start1":1095,"start2":1095,"length1":16,"length2":65}]],"length":2074,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1351883319877,"patch":[[{"diffs":[[0,"/button>"],[1,"\n<button id=\"getStudents\">Get Students</button>\n<button id=\"getStudents\">Get Students</button>"],[0,"\n\n</div>"]],"start1":1706,"start2":1706,"length1":16,"length2":110}]],"length":2168,"saved":false}
+{"ts":1351883324879,"patch":[[{"diffs":[[0,"<button id=\""],[-1,"getStudents"],[1,"logout"],[0,"\">Get Studen"]],"start1":1715,"start2":1715,"length1":35,"length2":30}]],"length":2163,"saved":false}
+{"ts":1351883329645,"patch":[[{"diffs":[[0,"logout\">"],[-1,"Get Students"],[1,"Logout"],[0,"</button"]],"start1":1727,"start2":1727,"length1":28,"length2":22}]],"length":2157,"saved":false}
+{"ts":1351883377432,"patch":[[{"diffs":[[0,"utton>\n\n"],[1,"\n<FORM METHOD=\"LINK\" ACTION=\"page1.htm\">\n<INPUT TYPE=\"submit\" VALUE=\"Clickable Button\">\n</FORM>\n"],[0,"</div> <"]],"start1":1791,"start2":1791,"length1":16,"length2":112}]],"length":2253,"saved":false}
+{"ts":1351883379904,"patch":[[{"diffs":[[0,"</FORM>\n"],[1,"\n"],[0,"</div> <"]],"start1":1887,"start2":1887,"length1":16,"length2":17}]],"length":2254,"saved":false}
+{"ts":1351883383030,"patch":[[{"diffs":[[0,"ton>\n\n\n<"],[-1,"FORM"],[1,"form"],[0," METHOD="]],"start1":1793,"start2":1793,"length1":20,"length2":20}]],"length":2254,"saved":false}
+{"ts":1351883385534,"patch":[[{"diffs":[[0,"orm "],[-1,"METHOD"],[1,"method"],[0,"=\"LI"]],"start1":1802,"start2":1802,"length1":14,"length2":14}]],"length":2254,"saved":false}
+{"ts":1351883399994,"patch":[[{"diffs":[[0,"orm "],[-1,"method=\"LINK\" ACTION=\"page1.htm\""],[1,"action"],[0,">\n<I"]],"start1":1802,"start2":1802,"length1":40,"length2":14}]],"length":2228,"saved":false}
+{"ts":1351883402554,"patch":[[{"diffs":[[0,"m action"],[1,"=\"/"],[0,">\n<INPUT"]],"start1":1804,"start2":1804,"length1":16,"length2":19}]],"length":2231,"saved":false}
+{"ts":1351883406067,"patch":[[{"diffs":[[0,"ction=\"/"],[1,"logout\", met"],[0,">\n<INPUT"]],"start1":1807,"start2":1807,"length1":16,"length2":28}]],"length":2243,"saved":false}
+{"ts":1351883408330,"patch":[[{"diffs":[[0,"ut\", met"],[1,"hod=\"GET\""],[0,">\n<INPUT"]],"start1":1819,"start2":1819,"length1":16,"length2":25}]],"length":2252,"saved":false}
+{"ts":1351883413770,"patch":[[{"diffs":[[0,"\">\n<"],[-1,"INPUT TYPE"],[1,"input type"],[0,"=\"su"]],"start1":1835,"start2":1835,"length1":18,"length2":18}]],"length":2252,"saved":false}
+{"ts":1351883418366,"patch":[[{"diffs":[[0,"it\" "],[-1,"VALUE"],[1,"value"],[0,"=\"Cl"]],"start1":1855,"start2":1855,"length1":13,"length2":13}]],"length":2252,"saved":false}
+{"ts":1351883426618,"patch":[[{"diffs":[[0,"ue=\""],[-1,"Clickable Button"],[1,"Logout"],[0,"\">\n<"]],"start1":1862,"start2":1862,"length1":24,"length2":14}]],"length":2242,"saved":false}
+{"ts":1351883430908,"patch":[[{"diffs":[[0,">\n</"],[-1,"FORM"],[1,"form"],[0,">\n\n<"]],"start1":1873,"start2":1873,"length1":12,"length2":12}]],"length":2242,"saved":false}
+{"ts":1351883433103,"patch":[[{"diffs":[[0,"on>\n"],[-1,"<button id=\"logout\">Logout</button>\n"],[0,"<but"]],"start1":1711,"start2":1711,"length1":44,"length2":8}]],"length":2206,"saved":false}
+{"ts":1351883439539,"patch":[[{"diffs":[[0,"tton id=\"get"],[-1,"Students"],[1,"User"],[0,"\">Get Studen"]],"start1":1718,"start2":1718,"length1":32,"length2":28}]],"length":2202,"saved":false}
+{"ts":1351883444905,"patch":[[{"diffs":[[0,"etUser\">Get "],[-1,"Students"],[1,"Current User"],[0,"</button>\n\n\n"]],"start1":1728,"start2":1728,"length1":32,"length2":36}]],"length":2206,"saved":false}
+{"ts":1351885159530,"patch":[[{"diffs":[[0,"\n\n\n<"],[-1,"form action=\"/logout\", method=\"GET\">\n<input type=\"submit\" value=\"Logout\">\n</form"],[1,"a href=\"/auth/facebook\">Login with Facebook</a"],[0,">\n\n<"]],"start1":1761,"start2":1761,"length1":88,"length2":54}]],"length":2172,"saved":false}
+{"ts":1351885165183,"patch":[[{"diffs":[[0,"\n\n<a href=\"/"],[-1,"auth/facebook"],[1,"logout"],[0,"\">Login with"]],"start1":1762,"start2":1762,"length1":37,"length2":30}]],"length":2165,"saved":false}
+{"ts":1351885169071,"patch":[[{"diffs":[[0,"out\">Log"],[-1,"in with Facebook"],[1,"out"],[0,"</a>\n\n</"]],"start1":1777,"start2":1777,"length1":32,"length2":19}]],"length":2152,"saved":false}
+{"ts":1351885174291,"patch":[[{"diffs":[[0,"button>\n"],[1,"<\n"],[0,"<button "]],"start1":1707,"start2":1707,"length1":16,"length2":18}]],"length":2154,"saved":false}
+{"ts":1351885176341,"patch":[[{"diffs":[[0,"utton>\n<"],[1,"br>"],[0,"\n<button"]],"start1":1708,"start2":1708,"length1":16,"length2":19}]],"length":2157,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1351907483778,"patch":[[{"diffs":[[0,"utton>\n\n"],[1,"<a href=\"/logout\">Logout</a>\n"],[0,"\n<a href"]],"start1":1760,"start2":1760,"length1":16,"length2":45}]],"length":2186,"saved":false}
+{"ts":1351907490737,"patch":[[{"diffs":[[0,"ton>\n\n<a href=\"/"],[-1,"logout"],[1,"getu"],[0,"\">Logout</a>\n\n<a"]],"start1":1762,"start2":1762,"length1":38,"length2":36}]],"length":2184,"saved":false}
+{"ts":1351907491696,"patch":[[{"diffs":[[0,"f=\"/getu"],[1,"ser"],[0,"\">Logout"]],"start1":1774,"start2":1774,"length1":16,"length2":19}]],"length":2187,"saved":false}
+{"ts":1351907497515,"patch":[[{"diffs":[[0,"etuser\">"],[-1,"Logout"],[0,"</a>\n\n<a"]],"start1":1779,"start2":1779,"length1":22,"length2":16}]],"length":2181,"saved":false}
+{"ts":1351907499904,"patch":[[{"diffs":[[0,"etuser\">"],[1,"Get "],[0,"</a>\n\n<a"]],"start1":1779,"start2":1779,"length1":16,"length2":20}]],"length":2185,"saved":false}
+{"ts":1351907502412,"patch":[[{"diffs":[[0,"er\">Get "],[1,"current user"],[0,"</a>\n\n<a"]],"start1":1783,"start2":1783,"length1":16,"length2":28}]],"length":2197,"saved":false}
+{"ts":1351907504117,"patch":[[{"diffs":[[0," id=\"get"],[-1,"U"],[1,"u"],[0,"ser\">Get"]],"start1":1727,"start2":1727,"length1":17,"length2":17}]],"length":2197,"saved":false}
+{"ts":1351907530711,"patch":[[{"diffs":[[0,"ton id=\""],[-1,"get"],[1,"curre"],[0,"user\">Ge"]],"start1":1724,"start2":1724,"length1":19,"length2":21}]],"length":2199,"saved":false}
+{"ts":1351907531933,"patch":[[{"diffs":[[0,"d=\"curre"],[1,"nt"],[0,"user\">Ge"]],"start1":1729,"start2":1729,"length1":16,"length2":18}]],"length":2201,"saved":false}
+{"ts":1351907537085,"patch":[[{"diffs":[[0," href=\"/"],[-1,"ge"],[1,"curren"],[0,"tuser\">G"]],"start1":1774,"start2":1774,"length1":18,"length2":22}]],"length":2205,"saved":false}
+{"ts":1351909192612,"patch":[[{"diffs":[[0,"ton id=\""],[1,"get"],[0,"currentu"]],"start1":1724,"start2":1724,"length1":16,"length2":19}]],"length":2208,"saved":false}
+{"ts":1351909195541,"patch":[[{"diffs":[[0," id=\"get"],[1,"C"],[0,"currentu"]],"start1":1727,"start2":1727,"length1":16,"length2":17}]],"length":2209,"saved":false}
+{"ts":1351909196764,"patch":[[{"diffs":[[0,"id=\"getC"],[-1,"c"],[0,"urrentus"]],"start1":1728,"start2":1728,"length1":17,"length2":16}]],"length":2208,"saved":false}
+{"ts":1351909198815,"patch":[[{"diffs":[[0,"=\"getCurrent"],[-1,"u"],[1,"U"],[0,"ser\">Get Cur"]],"start1":1730,"start2":1730,"length1":25,"length2":25}]],"length":2208,"saved":false}
+{"ts":1351910702234,"patch":[[{"diffs":[[0,"/button>"],[1,"\n<br>"],[0,"\n\n<a hre"]],"start1":1765,"start2":1765,"length1":16,"length2":21}]],"length":2213,"saved":false}
+{"ts":1351910703661,"patch":[[{"diffs":[[0,">\n<br>\n\n"],[1,"\n"],[0,"<a href="]],"start1":1772,"start2":1772,"length1":16,"length2":17}]],"length":2214,"saved":false}
+{"ts":1351910708674,"patch":[[{"diffs":[[0,"er</button>\n"],[1,"<br><button id=\"getCurrentUser\">Get Current User</button>\n"],[0,"<br>\n\n\n<a hr"]],"start1":1762,"start2":1762,"length1":24,"length2":82}]],"length":2272,"saved":false}
+{"ts":1351910711993,"patch":[[{"diffs":[[0,"on>\n<br>"],[1,"\n"],[0,"<button "]],"start1":1770,"start2":1770,"length1":16,"length2":17}]],"length":2273,"saved":false}
+{"ts":1351910717364,"patch":[[{"diffs":[[0,"tton id=\"get"],[-1,"CurrentUser"],[0,"\">Get Curren"]],"start1":1782,"start2":1782,"length1":35,"length2":24}]],"length":2262,"saved":false}
+{"ts":1351910721645,"patch":[[{"diffs":[[0,"d=\"get\">"],[-1,"Get Current User"],[1,"test"],[0,"</button"]],"start1":1788,"start2":1788,"length1":32,"length2":20}]],"length":2250,"saved":false}

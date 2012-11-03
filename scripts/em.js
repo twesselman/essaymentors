@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    $('#getStudents').click(readStudents);
+    $('#getStudents').click(readStudents);    
+    $('#getCurrentUser').click(readCurrentUser);
 	$('#signUp').click(signUp);
 	$('#signIn').click(signIn);
 });
@@ -37,13 +38,22 @@ function createStudent() {
     document.getElementById("results").value=xmlHttp.responseText;
 }
 
+function readCurrentUser() {
+    var xmlHttp = null;
+    sUrl = "/currentuser";
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", sUrl, false );
+    xmlHttp.send ( null );
+    var user = xmlHttp.responseText;
+    alert(user);
+}
+
 function readStudents() {
 	var xmlHttp = null;
 	sUrl = "/students";
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", sUrl, false );
     xmlHttp.send( null );
-    var resultsStudents="";
     var students=xmlHttp.responseText;
     var arrayStudents = JSON.parse(students);
 
