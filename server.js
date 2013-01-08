@@ -102,8 +102,53 @@ app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { successRedirect: '/',
                                       failureRedirect: '/login' }));
                                       
-                                      
-// Routes   
+// Routes   *******************************************************************************************************************
+
+
+app.post('/signmeup', function(req, res) {
+    console.log('signmeup called');
+    
+    console.log(req.body.student);
+    app.students.insert(req.body.student, function (err, doc) {
+        if (err) return next(err);
+       res.send('go go');
+	});
+    
+    switch(req.body.user_type) {
+    case "student": {
+        res.redirect('/studentmain.html');
+        }
+        break;
+    case "parent": {
+        res.redirect('/parentmain.html');
+        }
+        break;
+    case "mentor": {
+        res.redirect('/mentormain.html');
+        }
+        break;
+    }
+
+});
+   
+app.post('/signmein', function(req, res) {
+    console.log('signmein called');
+    // process login
+    
+    // determine main page based on login user
+    res.redirect('/studentmain.html');
+});
+   
+app.get('/test', function(req, res) {
+    console.log('test called');
+    res.redirect('/signup.html');
+});
+   
+app.get('/done', function(req, res) {
+    console.log('done called');
+    res.redirect('/index.html');
+});
+
 
 app.post('/login', 
     passport.authenticate('local',
@@ -186,4 +231,5 @@ app.get('/item/:id', function(req, res, next) {
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
 	console.log(' - listening on '+port);
+    
 });

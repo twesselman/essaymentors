@@ -7,7 +7,43 @@
 <script type="text/javascript" src="em.js"></script>
 
 <body>
+
+<img src="http://essaymentors.com/wp-content/uploads/2012/05/essay-mentor-logo-orange-for-website.jpg"><img>
+<br/>
+
+All the details about signing up
+
 <h1>Sign me up!</h1>
+<!--<form action="/signmeup", method="post", name="signupnew" target="doSignUpNewProc" onsubmit="setTimeout('self.close()',1000)"> -->
+<form action="/signmeup", method="post">
+    <br/>
+    <label>First:</label>
+    <input id="firstname" type="text" name="student[firstname]"/>
+    
+    <br/>
+    <label>Last:</label>
+    <input id="lastname" type="text" name="student[lastname]"/>
+    
+    <br/>
+    <label>Username:</label>
+    <input id="username" type="text" name="student[username]"/>
+    
+    <br/>
+    <label>Password:</label>
+    <input id="password" type="password" name="student[password]"/>
+
+    <br/>
+    <label>Email:</label>
+    <input type="text" name="student[email]"/>
+    
+    <br/>
+    <input type="radio" name="student[user_type]" value="student" checked>Student<br>
+    <input type="radio" name="student[user_type]" value="parent">Parent<br>
+    <input type="radio" name="student[user_type]" value="mentor">Mentor<br>
+    <input type="submit" value="Sign Up"/>
+</form>
+
+Todo: add sign up with Facebook
 
 </body>
 </html>

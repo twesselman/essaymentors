@@ -3,6 +3,8 @@ $(document).ready(function() {
     $('#getCurrentUser').click(readCurrentUser);
 	$('#signUp').click(signUp);
 	$('#signIn').click(signIn);
+    
+    $('#emInput').html(returnCurrentUser());
 });
 
 $('#createform2').submit(function() {
@@ -11,19 +13,12 @@ $('#createform2').submit(function() {
 
 function onCreateStudent()
 {
+    // no longer used
 	var xmlHttp = null;
 	sUrl = "/createstudent";
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", sUrl, false );
     xmlHttp.send( null );
-}
-
-function signUp() {
-	alert('signUp');
-}
-
-function signIn() {
-	alert('signIn');
 }
 
 function createStudent() {
@@ -39,14 +34,17 @@ function createStudent() {
 }
 
 function readCurrentUser() {
+    alert(returnCurrentUser());
+}
+
+function returnCurrentUser() {
     var xmlHttp = null;
     sUrl = "/currentuser";
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", sUrl, false );
     xmlHttp.send ( null );
-    var user = xmlHttp.responseText;
-    alert(user);
-}
+    return xmlHttp.responseText;
+};
 
 function readStudents() {
 	var xmlHttp = null;

@@ -15,9 +15,17 @@
 <img src="http://essaymentors.com/wp-content/uploads/2012/05/essay-mentor-logo-orange-for-website.jpg"><img>
 </div> <!-- mainHeaderTitle -->
 
+
+
+
 <div id="mainHeaderSignin">
+<a href="signup.html" onclick="window.open('signup.html','popup','width=500,height=300,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Popup Sign Up!</a>
+<br>
+<a href="signin.html" onclick="window.open('signin.html','popup','width=500,height=300,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Popup Already have an account? Sign In!</a>
+<br>
+
 <a id="signUp" href="signup.html">Sign up!</a>
-<br><br>
+<br>
 <a id="signIn" href="signin.html">Already have an account? Sign in</a>
 </div> <!-- mainHeaderSignin -->
 
@@ -25,37 +33,10 @@
 
 <div id="mainContent">
 
-<h1>New Login!</h1>
-<form action="/login", method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username"/><br/>
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="text" name="password"/><br/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
+
 
 <h1>Facebook Login!</h1>
 <a href="/auth/facebook">Login with Facebook</a>
-
-<div id="emHeader">
-<form action="/createstudent", method="POST">
-    <br/><label>First:</label>
-    <input id="firstname" type="text" name="student[firstname]"/>
-    <br/><label>Last:</label>
-    <input id="lastname" type="text" name="student[lastname]"/>
-    <br/><label>Username:</label>
-    <input id="username" type="text" name="student[username]"/>
-    <br/><label>Password:</label>
-    <input id="password" type="text" name="student[password]"/>
-    <br/><input type="submit", value="Submit">
-</form>
-
 
 <p>
 <button id="getStudents">Get Students</button>
@@ -68,9 +49,9 @@
 
 <a href="/currentuser">Get current user</a>
 
-<a href="/logout">Logout</a>
+<a href="/logout">Logout</a><br>
 
-</div> <!-- emHeader -->
+<a href="/test">Test</a><br>
 
 <div id="emInput">
 	
