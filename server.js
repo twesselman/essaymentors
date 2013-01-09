@@ -111,8 +111,7 @@ app.post('/signmeup', function(req, res) {
     console.log(req.body.student);
     app.students.insert(req.body.student, function (err, doc) {
         if (err) return next(err);
-       res.send('go go');
-	});
+ 	});
     
     switch(req.body.user_type) {
     case "student": {
@@ -127,21 +126,40 @@ app.post('/signmeup', function(req, res) {
         res.redirect('/mentormain.html');
         }
         break;
+    default: {
+        res.send('oops');
     }
-
+    }
 });
    
 app.post('/signmein', function(req, res) {
     console.log('signmein called');
-    // process login
+    // Todo: process login
     
-    // determine main page based on login user
-    res.redirect('/studentmain.html');
+    // Todo: replace below with looking up the user type
+    
+    switch(req.body.user.user_type) {
+    case "student": {
+        res.redirect('/studentmain.html');
+        }
+        break;
+    case "parent": {
+        res.redirect('/parentmain.html');
+        }
+        break;
+    case "mentor": {
+        res.redirect('/mentormain.html');
+        }
+        break;
+    default: {
+        res.send('oops');
+        }
+    }
 });
    
 app.get('/test', function(req, res) {
     console.log('test called');
-    res.redirect('/signup.html');
+    res.send("Awesome!")
 });
    
 app.get('/done', function(req, res) {

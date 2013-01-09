@@ -18,32 +18,36 @@ All the details about signing up
 <form action="/signmeup", method="post">
     <br/>
     <label>First:</label>
-    <input id="firstname" type="text" name="student[firstname]"/>
+    <input id="firstname" type="text" name="user[firstname]"/>
     
     <br/>
     <label>Last:</label>
-    <input id="lastname" type="text" name="student[lastname]"/>
+    <input id="lastname" type="text" name="user[lastname]"/>
     
     <br/>
     <label>Username:</label>
-    <input id="username" type="text" name="student[username]"/>
+    <input id="username" type="text" name="user[username]"/>
     
     <br/>
     <label>Password:</label>
-    <input id="password" type="password" name="student[password]"/>
+    <input id="password" type="password" name="user[password]"/>
 
     <br/>
     <label>Email:</label>
     <input type="text" name="student[email]"/>
     
     <br/>
-    <input type="radio" name="student[user_type]" value="student" checked>Student<br>
-    <input type="radio" name="student[user_type]" value="parent">Parent<br>
-    <input type="radio" name="student[user_type]" value="mentor">Mentor<br>
+    <input type="radio" name="user[user_type]" value="student" checked>Student<br>
+    <input type="radio" name="user[user_type]" value="parent">Parent<br>
+    <input type="radio" name="user[user_type]" value="mentor">Mentor<br>
     <input type="submit" value="Sign Up"/>
 </form>
 
-Todo: add sign up with Facebook
+<br/>
+Or...
+<br/>
+<a href="/auth/facebook">Sign up with Facebook</a>
+
 
 </body>
 </html>
