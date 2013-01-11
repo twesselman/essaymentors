@@ -1,15 +1,3 @@
-$(document).ready(function() {
-    $('#getStudents').click(readStudents);    
-    $('#getCurrentUser').click(readCurrentUser);
-	$('#signUp').click(signUp);
-	$('#signIn').click(signIn);
-    
-    $('#emInput').html(returnCurrentUser());
-});
-
-$('#createform2').submit(function() {
-    alert('hi');
-});
 
 function onCreateStudent()
 {
@@ -31,10 +19,6 @@ function createStudent() {
     xmlHttp.open( "POST", sUrl, false );
     xmlHttp.send( null );
     document.getElementById("results").value=xmlHttp.responseText;
-}
-
-function readCurrentUser() {
-    alert(returnCurrentUser());
 }
 
 function returnCurrentUser() {
@@ -70,6 +54,6 @@ function readStudents() {
      r[++j] = arrayStudents[index].lastname;
      r[++j] = '</td></tr>';
  	}
-console.log(r.join(''));
-$('#tableResults').html(r.join('')); 
+    console.log(r.join(''));
+    $('#tableResults').html(r.join('')); 
 }

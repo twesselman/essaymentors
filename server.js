@@ -99,7 +99,7 @@ server.get('/auth/facebook', passport.authenticate('facebook'));
 // authentication has failed.
 server.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { successRedirect: '/',
-                                      failureRedirect: '/login' }));
+                                      failureRedirect: '/signmein' }));
                                       
 // Routes   *******************************************************************************************************************
 
@@ -144,7 +144,8 @@ server.post('/signmein', function(req, res) {
     
      switch(req.body.user.user_type) {
     case "student": {
-        res.redirect('/studentmain.html');
+        res.end('Logged in!');
+        //res.redirect('studentmain.html');
         }
         break;
     case "parent": {
@@ -202,7 +203,10 @@ server.post('/login',
     
 server.get('/logout', function (req, res) {
     console.log('logout called');
-    
+
+    req.session.currentuser = '';
+    req.session.loggedin=false;
+
     req.logOut();
     res.redirect('/');
 });
@@ -223,8 +227,6 @@ server.get('/students', function (req, res, next) {
 });
 
 function holder(res) {
-
-
     var cursor = server.students.find({ });
     res.write('{');
     cursor.each(function(err, item) {
@@ -256,11 +258,6 @@ server.post('/createstudent', function (req, res, next) {
        res.send('go go');
 	});
     res.send('ok');
-});
-
-//item route
-server.get('/item/:id', function(req, res, next) {
-
 });
 
 // listen

@@ -513,3 +513,21 @@
 {"ts":1357871306818,"patch":[[{"diffs":[[0,"nt\": {\r\n"],[-1,"/"],[0,"        "]],"start1":5147,"start2":5147,"length1":17,"length2":16},{"diffs":[[0,"or\": {\r\n"],[-1,"//"],[0,"        "]],"start1":5239,"start2":5239,"length1":18,"length2":16}]],"length":7761,"saved":false}
 {"ts":1357871312568,"patch":[[{"diffs":[[0,"}\r\n    }"],[-1,"\r\n  "],[0,"  \r\n});\r"]],"start1":5368,"start2":5368,"length1":20,"length2":16}]],"length":7757,"saved":false}
 {"ts":1357871319275,"patch":[[{"diffs":[[0,"  \r\n"],[-1,"res.send(\"currentuser set to: \"+req.session.currentuser);\r\n"],[0,"    "]],"start1":4936,"start2":4936,"length1":67,"length2":8}]],"length":7698,"saved":false}
+{"ts":1357871870733,"patch":[[{"diffs":[[0,"  res.redirect('"],[1,"http://essaymentors.twesselman.c9.io"],[0,"/studentmain.htm"]],"start1":5009,"start2":5009,"length1":32,"length2":68}]],"length":7734,"saved":false}
+{"ts":1357871877785,"patch":[[{"diffs":[[0,"direct('"],[-1,"http://"],[0,"essaymen"]],"start1":5017,"start2":5017,"length1":23,"length2":16}]],"length":7727,"saved":false}
+{"ts":1357873138688,"patch":[[{"diffs":[[0,"ct('"],[-1,"essaymentors.twesselman.c9.io/"],[0,"stud"]],"start1":5021,"start2":5021,"length1":38,"length2":8}]],"length":7697,"saved":false}
+{"ts":1357873354770,"patch":[[{"diffs":[[0,"\": {\r\n        re"],[1,"\r\n        //re"],[0,"s.redirect('stud"]],"start1":4997,"start2":4997,"length1":32,"length2":46}]],"length":7711,"saved":false}
+{"ts":1357873355830,"patch":[[{"diffs":[[0,"      re"],[1,"s.le"],[0,"\r\n      "]],"start1":5005,"start2":5005,"length1":16,"length2":20}]],"length":7715,"saved":false}
+{"ts":1357873357546,"patch":[[{"diffs":[[0,"    res."],[-1,"l"],[0,"e"],[1,"nd"],[0,"\r\n      "]],"start1":5007,"start2":5007,"length1":18,"length2":19}]],"length":7716,"saved":false}
+{"ts":1357873358998,"patch":[[{"diffs":[[0," res.end"],[1,"()"],[0,"\r\n      "]],"start1":5010,"start2":5010,"length1":16,"length2":18}]],"length":7718,"saved":false}
+{"ts":1357873363659,"patch":[[{"diffs":[[0,"res.end("],[1,"'Logged in!'"],[0,")\r\n     "]],"start1":5011,"start2":5011,"length1":16,"length2":28}]],"length":7730,"saved":false}
+{"ts":1357873365878,"patch":[[{"diffs":[[0,"ed in!')"],[1,";"],[0,"\r\n      "]],"start1":5024,"start2":5024,"length1":16,"length2":17}]],"length":7731,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1357878347121,"patch":[[{"diffs":[[0,"rect: '/"],[-1,"log"],[1,"signme"],[0,"in' }));"]],"start1":3762,"start2":3762,"length1":19,"length2":22}]],"length":7734,"saved":false}
+{"ts":1357878376186,"patch":[[{"diffs":[[0," called');\r\n"],[-1,"    "],[1,"\r\n"],[0,"\r\n    req.lo"]],"start1":6330,"start2":6330,"length1":28,"length2":26}]],"length":7732,"saved":false}
+{"ts":1357878381133,"patch":[[{"diffs":[[0,"alled');\r\n\r\n"],[1,"    $('#getStudents').click(readStudents);  "],[0,"\r\n    req.lo"]],"start1":6332,"start2":6332,"length1":24,"length2":68}]],"length":7776,"saved":false}
+{"ts":1357878382772,"patch":[[{"diffs":[[0,"\r\n\r\n"],[-1,"    $('#getStudents').click(readStudents);  "],[0,"\r\n  "]],"start1":6340,"start2":6340,"length1":52,"length2":8}]],"length":7732,"saved":false}
+{"ts":1357878394676,"patch":[[{"diffs":[[0,"alled');\r\n\r\n"],[1,"    req.session.currentuser = req.body.user.username;\r\n    req.session.loggedin=true;\r\n"],[0,"\r\n    req.lo"]],"start1":6332,"start2":6332,"length1":24,"length2":111}]],"length":7819,"saved":false}
+{"ts":1357878399366,"patch":[[{"diffs":[[0,"tuser = "],[-1,"req.body.user.username"],[1,"''"],[0,";\r\n    r"]],"start1":6366,"start2":6366,"length1":38,"length2":18}]],"length":7799,"saved":false}
+{"ts":1357878401445,"patch":[[{"diffs":[[0,"on.loggedin="],[-1,"tru"],[1,"fals"],[0,"e;\r\n\r\n    re"]],"start1":6392,"start2":6392,"length1":27,"length2":28}]],"length":7800,"saved":false}
+{"ts":1357878423341,"patch":[[{"diffs":[[0,"res) {\r\n"],[-1,"\r\n\r\n"],[0,"    var "]],"start1":6837,"start2":6837,"length1":20,"length2":16}]],"length":7796,"saved":false}
+{"ts":1357878438161,"patch":[[{"diffs":[[0,"\r\n\r\n"],[-1,"//item route\r\nserver.get('/item/:id', function(req, res, next) {\r\n\r\n});\r\n\r\n"],[0,"// l"]],"start1":7584,"start2":7584,"length1":83,"length2":8}]],"length":7721,"saved":false}
