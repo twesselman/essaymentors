@@ -4,15 +4,21 @@ var passport = require('passport');
 var LocalStrategy=require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
-var app = express.createServer();
+var server = express.createServer();
 
-app.use(express.static(__dirname + '/website'));
-app.use(express.static(__dirname + '/scripts'));
-app.use(express.bodyParser());
+server.configure(function() {
+  server.use(express.bodyParser());  
+  server.use(express.cookieParser());
+  server.use(express.session({secret: 'my super secret' }));
+  server.use(passport.initialize());
+  server.use(passport.session());
+  server.use(express.static(__dirname + '/website'));
+  server.use(express.static(__dirname + '/scripts'));
+});
 
-var server = new mongodb.Server('ds037987.mongolab.com', 37987);
+var dbserver = new mongodb.Server('ds037987.mongolab.com', 37987);
+var dbMongo = new mongodb.Db('heroku_app8094430', dbserver);
 
-var dbMongo = new mongodb.Db('heroku_app8094430', server);
 dbMongo.open(function on_open(err, dbMongo) {
     if (err) {
         console.log(err);
@@ -25,21 +31,14 @@ dbMongo.open(function on_open(err, dbMongo) {
             throw(err);
         }
         console.log('db authenticated');
-        app.students = new mongodb.Collection(dbMongo, 'students');
+        server.students = new mongodb.Collection(dbMongo, 'students');
     });
-});
-
-app.configure(function() {
-  app.use(express.cookieParser());
-  app.use(express.session({ secret: 'keyboard cat' }));
-  app.use(passport.initialize());
-  app.use(passport.session());
 });
 
 passport.use(new LocalStrategy(
     function(username, password, done) {
         console.log('invoking LocalStrategy with username: ' + username + ' password: ' + password);
-        app.students.findOne({ username: username }, function(err, user) {
+        server.students.findOne({ username: username }, function(err, user) {
             if(err) {return done(err); }
             if(!user) {
                 console.log('user not found');
@@ -61,7 +60,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     console.log('deserializeUser' + id);
-    app.students.findOne({ username: id.username }, function(err, user) {
+    server.students.findOne({ username: id.username }, function(err, user) {
         if (err) {return done(err); }
         if (!user) {
             return done(null, false, {message: 'Unknown user' });
@@ -77,7 +76,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
       console.log(profile);
-        app.students.findOne({ username: "twesselman" }, function(err, user) {
+        server.students.findOne({ username: "twesselman" }, function(err, user) {
             if(err) {return done(err); }
             if(!user) {
                 console.log('user not found');
@@ -92,26 +91,28 @@ passport.use(new FacebookStrategy({
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 // /auth/facebook/callback
-app.get('/auth/facebook', passport.authenticate('facebook'));
+server.get('/auth/facebook', passport.authenticate('facebook'));
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-app.get('/auth/facebook/callback', 
+server.get('/auth/facebook/callback', 
   passport.authenticate('facebook', { successRedirect: '/',
                                       failureRedirect: '/login' }));
                                       
 // Routes   *******************************************************************************************************************
 
-
-app.post('/signmeup', function(req, res) {
+server.post('/signmeup', function(req, res) {
     console.log('signmeup called');
     
     console.log(req.body.student);
-    app.students.insert(req.body.student, function (err, doc) {
+    server.students.insert(req.body.user, function (err, doc) {
         if (err) return next(err);
- 	});
+     });
+     
+    req.session.currentuser=req.body.user.username;
+    req.session.logedin=true;
     
     switch(req.body.user_type) {
     case "student": {
@@ -132,13 +133,16 @@ app.post('/signmeup', function(req, res) {
     }
 });
    
-app.post('/signmein', function(req, res) {
+server.post('/signmein', function(req, res) {
     console.log('signmein called');
     // Todo: process login
     
-    // Todo: replace below with looking up the user type
+   // Todo: replace below with looking up the user type
+   
+    req.session.currentuser = req.body.user.username;
+    req.session.loggedin=true;
     
-    switch(req.body.user.user_type) {
+     switch(req.body.user.user_type) {
     case "student": {
         res.redirect('/studentmain.html');
         }
@@ -154,21 +158,40 @@ app.post('/signmein', function(req, res) {
     default: {
         res.send('oops');
         }
+    }  
+});
+
+server.post('/set', function(req, res) {
+    req.session.currentuser = req.body.username;
+    res.send("currentuser set to: "+req.session.currentuser);
+});
+
+server.get('/currentuser', function (req, res) {
+    console.log('currentuser called');
+    
+    if (req.session.currentuser)
+    {
+        res.send(req.session.currentuser);
+    }
+    else
+    {
+        res.send("No one logged in");
     }
 });
+    
    
-app.get('/test', function(req, res) {
+server.get('/test', function(req, res) {
     console.log('test called');
     res.send("Awesome!")
 });
    
-app.get('/done', function(req, res) {
+server.get('/done', function(req, res) {
     console.log('done called');
     res.redirect('/index.html');
 });
 
 
-app.post('/login', 
+server.post('/login', 
     passport.authenticate('local',
         { successRedirect: '/',
           failureRedirect: '/login',
@@ -177,28 +200,23 @@ app.post('/login',
         )
     );
     
-app.get('/logout', function (req, res) {
+server.get('/logout', function (req, res) {
     console.log('logout called');
     
     req.logOut();
     res.redirect('/');
 });
         
-app.get('/currentuser', function (req, res) {
-    console.log('currentuser called');
-    
-    res.send(req.user);
-});
-    
-app.get('/loggedin', function (req, res, next) {
+
+server.get('/loggedin', function (req, res, next) {
     res.send('logged in');
 });
 
 // get students
-app.get('/students', function (req, res, next) {
+server.get('/students', function (req, res, next) {
     console.log('get students called');
     
-    app.students.find().toArray(function(err, documents) {
+    server.students.find().toArray(function(err, documents) {
         console.log(documents);
         res.send(documents);
     });
@@ -207,7 +225,7 @@ app.get('/students', function (req, res, next) {
 function holder(res) {
 
 
-    var cursor = app.students.find({ });
+    var cursor = server.students.find({ });
     res.write('{');
     cursor.each(function(err, item) {
         console.log(item);
@@ -217,7 +235,7 @@ function holder(res) {
     res.end();
 
 
-    var stream = app.students.find({}).stream();
+    var stream = server.students.find({}).stream();
         
     stream.on('data', function(data) {
         res.write(data);
@@ -230,10 +248,10 @@ function holder(res) {
 
 
 // student create
-app.post('/createstudent', function (req, res, next) {
+server.post('/createstudent', function (req, res, next) {
 	console.log('create called');
     console.log(req.body.student);
-	app.students.insert(req.body.student, function (err, doc) {
+	server.students.insert(req.body.student, function (err, doc) {
         if (err) return next(err);
        res.send('go go');
 	});
@@ -241,13 +259,13 @@ app.post('/createstudent', function (req, res, next) {
 });
 
 //item route
-app.get('/item/:id', function(req, res, next) {
-	
+server.get('/item/:id', function(req, res, next) {
+
 });
 
 // listen
 var port = process.env.PORT || 3000;
-app.listen(port, function () {
+server.listen(port, function () {
 	console.log(' - listening on '+port);
     
 });
