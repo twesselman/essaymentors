@@ -2,7 +2,8 @@
   "name": "essaymentors",
   "version": "0.0.1",
   "dependencies": {
-    "express": "2.5.x", 
+    "express": "3.x", 
+    "connect-flash": "0.1.x",
     "mongodb": "1.1.11",
     "passport": "0.1.12",
     "passport-local": "0.1.6",

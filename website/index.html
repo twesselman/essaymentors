@@ -5,6 +5,7 @@
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="em.js"></script>
+<script type="text/javascript" src="index.js"></script>
 
 <body>
 
@@ -21,12 +22,12 @@
 <div id="mainHeaderSignin">
 <a href="signup.html" onclick="window.open('signup.html','popup','width=500,height=300,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Popup Sign Up!</a>
 <br>
-<a href="signin.html" onclick="window.open('signin.html','popup','width=500,height=300,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Popup Already have an account? Sign In!</a>
+<a href="login.html" onclick="window.open('login.html','popup','width=500,height=500,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Popup Already have an account? Log In!</a>
 <br>
 
 <a id="signUp" href="signup.html">Sign up!</a>
 <br>
-<a id="signIn" href="signin.html">Already have an account? Sign in</a>
+<a id="signIn" href="login.html">Already have an account? Log in</a>
 </div> <!-- mainHeaderSignin -->
 
 </div> <!-- mainheader -->
@@ -48,12 +49,6 @@
 <a href="/currentuser">Get current user</a>
 
 <a href="/logout">Logout</a><br>
-
-<form action="/set", method="post">
-    <label>Username:</label>
-    <input type="text" name="username"/>
-    <input type="submit" value="Set current user"/>
-</form>
 
 
 

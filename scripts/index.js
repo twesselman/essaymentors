@@ -1,12 +1,11 @@
+
+
+
 $(document).ready(function() {
     $('#getStudents').click(readStudents);    
-    $('#getCurrentUser').click(readCurrentUser);
+    $('#getCurrentUser').click(alertCurrentUser);
     $('#signUp').click(signUp);
-	$('#signIn').click(signIn);
-    
+    $('#signIn').click(signIn);
     $('#emInput').html(returnCurrentUser());
 });
 
-$('#createform2').submit(function() {
-    alert('hi');
-});

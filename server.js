@@ -1,17 +1,20 @@
 var express = require ('express');
 var mongodb = require('mongodb');
 var passport = require('passport');
+var flash = require('connect-flash');
 var LocalStrategy=require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
-var server = express.createServer();
+var server = express();
 
 server.configure(function() {
   server.use(express.bodyParser());  
-  server.use(express.cookieParser());
+  server.use(express.cookieParser()); // must be before session initialization
   server.use(express.session({secret: 'my super secret' }));
+  server.use(flash());
   server.use(passport.initialize());
-  server.use(passport.session());
+  server.use(passport.session()); // must follow using express.session
+  //server.use(server.router);   needed???
   server.use(express.static(__dirname + '/website'));
   server.use(express.static(__dirname + '/scripts'));
 });
@@ -35,6 +38,32 @@ dbMongo.open(function on_open(err, dbMongo) {
     });
 });
 
+// Passport stuff ******************************************************************************************************************************************
+
+
+passport.serializeUser(function(user, done) {
+    console.log('serializeUser: ' + user.username);
+    done(null, user.username); // serialize using username for now
+});
+
+passport.deserializeUser(function(id, done) {
+    console.log('deserializeUser: id: ' + id); // id is username for now
+    
+    server.students.findOne({ username: id }, function(err, user) {
+        if (err) {
+            console.log('deserializeUser: Error ' + err);
+            return done(err); 
+        }
+        if (!user) {
+            console.log('deserializeUser: id not found: ' + id);
+            return done(null, false, {message: 'Unknown user' });
+        }
+        console.log('deserializeUser: id found: ' + id);
+        console.log(user);
+        return done(null, user);
+    });
+});
+
 passport.use(new LocalStrategy(
     function(username, password, done) {
         console.log('invoking LocalStrategy with username: ' + username + ' password: ' + password);
@@ -49,26 +78,10 @@ passport.use(new LocalStrategy(
                 return done(null, false, { message: 'Invalid password' });
             }
             console.log('validated');
-            return done(null, user);
+            return done(null, user); // user now passed to serializeUser
         });
     }));
     
-passport.serializeUser(function(user, done) {
-    console.log('serializeUser');
-    done(null, user);
-});
-
-passport.deserializeUser(function(id, done) {
-    console.log('deserializeUser' + id);
-    server.students.findOne({ username: id.username }, function(err, user) {
-        if (err) {return done(err); }
-        if (!user) {
-            return done(null, false, {message: 'Unknown user' });
-        }
-        return done(null, user);
-    });
-});
-
 passport.use(new FacebookStrategy({
     clientID: "294130124020385",
     clientSecret: "8d43f4660ef13b15cd43384d0281bf96",
@@ -98,8 +111,8 @@ server.get('/auth/facebook', passport.authenticate('facebook'));
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
 server.get('/auth/facebook/callback', 
-  passport.authenticate('facebook', { successRedirect: '/',
-                                      failureRedirect: '/signmein' }));
+  passport.authenticate('facebook', { successRedirect: '/mentormain.html',
+                                      failureRedirect: '/login.html' }));
                                       
 // Routes   *******************************************************************************************************************
 
@@ -108,7 +121,7 @@ server.post('/signmeup', function(req, res) {
     
     console.log(req.body.student);
     server.students.insert(req.body.user, function (err, doc) {
-        if (err) return next(err);
+        if (err) return err;
      });
      
     req.session.currentuser=req.body.user.username;
@@ -132,47 +145,13 @@ server.post('/signmeup', function(req, res) {
     }
     }
 });
-   
-server.post('/signmein', function(req, res) {
-    console.log('signmein called');
-    // Todo: process login
-    
-   // Todo: replace below with looking up the user type
-   
-    req.session.currentuser = req.body.user.username;
-    req.session.loggedin=true;
-    
-     switch(req.body.user.user_type) {
-    case "student": {
-        res.end('Logged in!');
-        //res.redirect('studentmain.html');
-        }
-        break;
-    case "parent": {
-        res.redirect('/parentmain.html');
-        }
-        break;
-    case "mentor": {
-        res.redirect('/mentormain.html');
-        }
-        break;
-    default: {
-        res.send('oops');
-        }
-    }  
-});
-
-server.post('/set', function(req, res) {
-    req.session.currentuser = req.body.username;
-    res.send("currentuser set to: "+req.session.currentuser);
-});
 
 server.get('/currentuser', function (req, res) {
     console.log('currentuser called');
     
-    if (req.session.currentuser)
+    if (req.user)
     {
-        res.send(req.session.currentuser);
+        res.send(req.user.username);
     }
     else
     {
@@ -180,7 +159,6 @@ server.get('/currentuser', function (req, res) {
     }
 });
     
-   
 server.get('/test', function(req, res) {
     console.log('test called');
     res.send("Awesome!")
@@ -191,30 +169,51 @@ server.get('/done', function(req, res) {
     res.redirect('/index.html');
 });
 
+server.get('/usermainpage', function(req, res) {
+    console.log('usermainpage called');
+    switch(req.body.user_type) {
+        case "student": {
+            res.redirect('/studentmain.html');
+        }
+        break;
+        case "parent": {
+            res.redirect('/parentmain.html');
+        }
+        break;
+        case "mentor": {
+            res.redirect('/mentormain.html');
+        }
+        break;
+        default: {
+            res.send('oops');
+        } 
+    }
+});
 
-server.post('/login', 
-    passport.authenticate('local',
-        { successRedirect: '/',
-          failureRedirect: '/login',
-          failureFlash: true,
-          successFlash: 'Welcome to Essay Mentors'}
-        )
-    );
+// POST /login
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request.  If authentication fails, the user will be redirected back to the
+//   login page.  Otherwise, the primary route function function will be called,
+//   which, in this example, will redirect the user to the home page.
+//
+//   curl -v -d "username=bob&password=secret" http://127.0.0.1:3000/login
+server.post('/auth/local', 
+    passport.authenticate('local', { 
+        successRedirect: '/usermainpage.html',
+        failureRedirect: '/login.html',
+        failureFlash: true,
+        successFlash: 'Welcome to Essay Mentors'
+    })
+);
     
 server.get('/logout', function (req, res) {
     console.log('logout called');
 
-    req.session.currentuser = '';
-    req.session.loggedin=false;
-
+    // passport stuff
     req.logOut();
     res.redirect('/');
 });
-        
 
-server.get('/loggedin', function (req, res, next) {
-    res.send('logged in');
-});
 
 // get students
 server.get('/students', function (req, res, next) {
@@ -264,5 +263,4 @@ server.post('/createstudent', function (req, res, next) {
 var port = process.env.PORT || 3000;
 server.listen(port, function () {
 	console.log(' - listening on '+port);
-    
 });
