@@ -124,26 +124,7 @@ server.post('/signmeup', function(req, res) {
         if (err) return err;
      });
      
-    req.session.currentuser=req.body.user.username;
-    req.session.logedin=true;
-    
-    switch(req.body.user_type) {
-    case "student": {
-        res.redirect('/studentmain.html');
-        }
-        break;
-    case "parent": {
-        res.redirect('/parentmain.html');
-        }
-        break;
-    case "mentor": {
-        res.redirect('/mentormain.html');
-        }
-        break;
-    default: {
-        res.send('oops');
-    }
-    }
+    res.redirect('/login.html');
 });
 
 server.get('/currentuser', function (req, res) {
@@ -171,7 +152,7 @@ server.get('/done', function(req, res) {
 
 server.get('/usermainpage', function(req, res) {
     console.log('usermainpage called');
-    switch(req.body.user_type) {
+    switch(req.user.user_type) {
         case "student": {
             res.redirect('/studentmain.html');
         }
