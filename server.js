@@ -199,7 +199,7 @@ server.get('/usermainpage', function(req, res) {
 //   curl -v -d "username=bob&password=secret" http://127.0.0.1:3000/login
 server.post('/auth/local', 
     passport.authenticate('local', { 
-        successRedirect: '/usermainpage.html',
+        successRedirect: '/usermainpage',
         failureRedirect: '/login.html',
         failureFlash: true,
         successFlash: 'Welcome to Essay Mentors'
