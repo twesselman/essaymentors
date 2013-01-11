@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<html>
+
+<head><title>Essay Mentors Login</title></head>
+
+<body>
+
+<img src="http://essaymentors.com/wp-content/uploads/2012/05/essay-mentor-logo-orange-for-website.jpg"><img>
+<br/>
+
+<h1>Log me in!</h1>
+<form action="/auth/local", method="post">
+    <br/>
+    <label>Username:</label>
+    <input type="text" name="username"/>
+    
+    <br/>
+    <label>Password:</label>
+    <input type="text" name="password"/>
+    
+    <br/>
+    Eventually this won't be needed as we'll detect it based on username
+    <br/>
+    <input type="radio" name="user_type" value="student" checked>Student<br>
+    <input type="radio" name="user_type" value="parent">Parent<br>
+    <input type="radio" name="user_type" value="mentor">Mentor<br>
+    
+    <input type="submit" value="Log In"/>
+</form>
+
+<br/>
+Or...
+<br/>
+<a href="/auth/facebook">Login with Facebook</a>
+
+
+
+</body>
+</html>
