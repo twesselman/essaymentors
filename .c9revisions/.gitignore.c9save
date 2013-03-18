@@ -1,0 +1,2 @@
+{"ts":1363646296426,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1363646297647,"patch":[[{"diffs":[[1,"$ cat .gitignore\r\nnode_modules/\r\n.metadata/"]],"start1":0,"start2":0,"length1":0,"length2":43}]],"length":43,"saved":false}
