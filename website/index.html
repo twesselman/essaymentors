@@ -8,6 +8,47 @@
 <script type="text/javascript" src="index.js"></script>
 
 <body>
+<div id="fb-root"></div>
+<script>
+  // Additional JS functions here
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '294130124020385', // App ID
+      channelUrl : 'http://essaymentors.twesselman.c9.io/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional init code here
+    FB.getLoginStatus(function(response) {
+    $('#status').html(response.status);
+    if (response.status === 'connected') {
+        
+        } else if (response.status === 'not_authorized') {
+             
+        } else {
+         
+        }
+    });
+
+    FB.api('/me', function(response) {
+        console.log('Good to see you, ' + response.name + '.');
+        $('#fbinfo').html(response.name);
+    });
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+
 
 
 <div id="mainHeader">    
@@ -16,7 +57,14 @@
 <img src="http://essaymentors.com/wp-content/uploads/2012/05/essay-mentor-logo-orange-for-website.jpg"><img>
 </div> <!-- mainHeaderTitle -->
 
-
+<br>
+<div id="status">
+Status
+</div>
+<br>
+<div id="fbinfo">
+Facebook Info
+</div>
 
 
 <div id="mainHeaderSignin">
@@ -28,9 +76,15 @@
 <a id="signUp" href="signup.html">Sign up!</a>
 <br>
 <a id="signIn" href="login.html">Already have an account? Log in</a>
+<br>
+<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
 </div> <!-- mainHeaderSignin -->
 
+
 </div> <!-- mainheader -->
+
+<iframe src="https://www.facebook.com/plugins/registration.php?client_id=294130124020385&amp;redirect_uri=http%3A%2F%2Fessaymentors.twesselman.c9.io%2Fauth%s2Ffacebook%2Fcallback%2Fcreate&amp;fields=name,email,password" scrolling="no" frameborder="no" style="border:none" allowTransparency="true" width="100%" height="315px"></iframe>
+
 
 <div id="mainContent">
 

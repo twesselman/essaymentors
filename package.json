@@ -4,11 +4,11 @@
   "dependencies": {
     "express": "3.x", 
     "connect-flash": "0.1.x",
-    "mongodb": "1.1.11",
-    "passport": "0.1.12",
-    "passport-local": "0.1.6",
-    "passport-facebook": "0.1.4",
-    "connect-mongodb": "1.1.5"
+    "mongodb": "1.1.x",
+    "passport": "0.1.x",
+    "passport-local": "0.1.x",
+    "passport-facebook": "0.1.x",
+    "connect-mongodb": "1.1.x"
   },
   "engines": {
     "node": "0.8.x",

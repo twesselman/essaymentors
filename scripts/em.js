@@ -61,3 +61,4 @@ function readStudents() {
     console.log(r.join(''));
     $('#tableResults').html(r.join('')); 
 }
+

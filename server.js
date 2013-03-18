@@ -40,7 +40,6 @@ dbMongo.open(function on_open(err, dbMongo) {
 
 // Passport stuff ******************************************************************************************************************************************
 
-
 passport.serializeUser(function(user, done) {
     console.log('serializeUser: ' + user.username);
     done(null, user.username); // serialize using username for now
@@ -132,7 +131,10 @@ server.get('/currentuser', function (req, res) {
     
     if (req.user)
     {
-        res.send(req.user.username);
+        server.students.findOne({ username: req.user.username }, function(err, user) {
+            console.log(user);
+               res.send(user); 
+        });
     }
     else
     {
@@ -227,18 +229,6 @@ function holder(res) {
         res.end();
     });
 }
-
-
-// student create
-server.post('/createstudent', function (req, res, next) {
-	console.log('create called');
-    console.log(req.body.student);
-	server.students.insert(req.body.student, function (err, doc) {
-        if (err) return next(err);
-       res.send('go go');
-	});
-    res.send('ok');
-});
 
 // listen
 var port = process.env.PORT || 3000;
