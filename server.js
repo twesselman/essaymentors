@@ -20,7 +20,7 @@ server.configure(function() {
 });
 
 var dbserver = new mongodb.Server('ds037987.mongolab.com', 37987);
-var dbMongo = new mongodb.Db('heroku_app8094430', dbserver);
+var dbMongo = new mongodb.Db('heroku_app8094430', dbserver, {safe:false});
 
 dbMongo.open(function on_open(err, dbMongo) {
     if (err) {
@@ -28,7 +28,7 @@ dbMongo.open(function on_open(err, dbMongo) {
         throw(err);
     }
     console.log('Mongo db opened');
-    dbMongo.authenticate('emadmin', 'empassword', function on_authenticated(err, result) {
+    dbMongo.authenticate('emadmin', 'password', function on_authenticated(err, result) {
         if (err) {
             console.log(err);
             throw(err);
@@ -83,7 +83,7 @@ passport.use(new LocalStrategy(
     
 passport.use(new FacebookStrategy({
     clientID: "294130124020385",
-    clientSecret: "8d43f4660ef13b15cd43384d0281bf96",
+    clientSecret: "9f5db30f15b65a0dc901f5c89a7c38b9",
     callbackURL: "http://essaymentors.twesselman.c9.io/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
