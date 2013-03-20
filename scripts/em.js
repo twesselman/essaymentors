@@ -1,6 +1,8 @@
+$(document).ready(function() {
+    $('.em_logo').click(function() {window.location.href = "admin.html";});  
+});
 
-function onCreateStudent()
-{
+function onCreateStudent() {
     // no longer used
 	var xmlHttp = null;
 	var sUrl = "/createstudent";

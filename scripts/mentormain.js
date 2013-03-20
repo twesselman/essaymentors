@@ -1,14 +1,16 @@
 $(document).ready(function() {
     $('#getStudents').click(readStudents);  
         
-    $('#emCurrentUser').append(returnCurrentUser());
+    appendCurrentUser();
 });
 
-function returnCurrentUser() {
-    var xmlHttp = null;
-    sUrl = "/currentuser";
-    xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", sUrl, false );
-    xmlHttp.send ( null );
-    return xmlHttp.responseText;
+function appendCurrentUser() {
+     var jqxhr = $.getJSON( "/currentuser" )
+        .fail(function() { alert("error"); })
+        .always(function() { });
+ 
+    // Set another completion function for the request above
+    jqxhr.done(function(data) { 
+        $('#emCurrentUser').append(data.firstname + ' ' + data.lastname);
+    });
 };

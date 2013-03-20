@@ -107,3 +107,15 @@
 {"ts":1358621575908,"patch":[[{"diffs":[[0,"cebook\" "],[1,"><img style=\"width:80px;height:82px;\" src=\"/static/images/button-facebook.png?v=68ac\" alt=\"Facebook\" title=\"Join FriendFeed with your Facebook account\"/"],[0,">Login w"]],"start1":587,"start2":587,"length1":16,"length2":168}]],"length":790,"saved":false}
 {"ts":1358621582737,"patch":[[{"diffs":[[0,"oin "],[-1,"FriendFeed"],[1,"EssayMentors"],[0," wit"]],"start1":704,"start2":704,"length1":18,"length2":20}]],"length":792,"saved":false}
 {"ts":1358621586930,"patch":[[{"diffs":[[0,"le=\""],[-1,"Join"],[1,"Sign in to"],[0," Ess"]],"start1":699,"start2":699,"length1":12,"length2":18}]],"length":798,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1363807443281,"patch":[[{"diffs":[[0,"rc=\""],[-1,"/static/images/button-facebook.png?v=68ac"],[1,"http://plopbox.eu/images/fbconnect.png"],[0,"\" al"]],"start1":634,"start2":634,"length1":49,"length2":46}]],"length":795,"saved":false}
+{"ts":1363807462117,"patch":[[{"diffs":[[0,"<img"],[-1," style=\"width:80px;height:82px;\""],[0," src"]],"start1":596,"start2":596,"length1":40,"length2":8}]],"length":763,"saved":false}
+{"ts":1363807474641,"patch":[[{"diffs":[[0,"t\"/>"],[-1,"Login with Facebook"],[0,"</a>"]],"start1":717,"start2":717,"length1":27,"length2":8}]],"length":744,"saved":false}
+{"ts":1363807489524,"patch":[[{"diffs":[[0,"/></a>\n\n"],[-1,"\n\n"],[0,"</body>\n"]],"start1":719,"start2":719,"length1":18,"length2":16}]],"length":742,"saved":false}
+{"ts":1363807521561,"patch":[[{"diffs":[[0,"...\n<br/"],[-1,">"],[0,"\n<a href"]],"start1":560,"start2":560,"length1":17,"length2":16}]],"length":741,"saved":false}
+{"ts":1363807522544,"patch":[[{"diffs":[[0,"r...\n<br"],[-1,"/"],[0,"\n<a href"]],"start1":559,"start2":559,"length1":17,"length2":16}]],"length":740,"saved":false}
+{"ts":1363807525285,"patch":[[{"diffs":[[0,"r...\n<br"],[1,"><br>"],[0,"\n<a href"]],"start1":559,"start2":559,"length1":16,"length2":21}]],"length":745,"saved":false}
+{"ts":1363807526352,"patch":[[{"diffs":[[0,"rm>\n\n<br"],[-1,"/"],[0,">\nOr...\n"]],"start1":547,"start2":547,"length1":17,"length2":16}]],"length":744,"saved":false}
+{"ts":1363807527475,"patch":[[{"diffs":[[0,"img>\n<br"],[-1,"/"],[0,">\n\n<h1>L"]],"start1":242,"start2":242,"length1":17,"length2":16}]],"length":743,"saved":false}
+{"ts":1363807530990,"patch":[[{"diffs":[[0,">\n\n<br>\n"],[1,"\n"],[0,"Or...\n<b"]],"start1":548,"start2":548,"length1":16,"length2":17},{"diffs":[[0,"br><br>\n"],[1,"\n"],[0,"<a href="]],"start1":564,"start2":564,"length1":16,"length2":17}]],"length":745,"saved":false}
+{"ts":1363807532447,"patch":[[{"diffs":[[0,"\n\nOr...\n"],[1,"\n"],[0,"<br><br>"]],"start1":555,"start2":555,"length1":16,"length2":17}]],"length":746,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1363811423011,"patch":[[{"diffs":[[0,"<body>\n\n"],[1,"<a href=\"/admin.html\">\n "],[0,"<img src"]],"start1":130,"start2":130,"length1":16,"length2":40},{"diffs":[[0,"jpg\""],[-1,"><img>\n"],[1," />\n<a>"],[0,"<br>"]],"start1":260,"start2":260,"length1":15,"length2":15}]],"length":770,"saved":false}

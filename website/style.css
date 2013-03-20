@@ -1,27 +1,35 @@
 body {
-	font-family: sans-serif;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Garuda,sans-serif, Arial, Helvetica, Garuda, sans-serif;
 }
 
-#mainHeader
-{
-    height:100px;
-    background-color: #FDFDFD;
+.em_logo:hover {
+    opacity:0.5;
 }
-#mainHeaderTitle
-{
-    float:left;
-    background-color: #FAFAFA;
-}
+
 #mainHeaderSignin
 {
-    float:right;
-    text-align:right;
-    width:33%;
-    background-color: #FAFAFA;
+    position:absolute;
+    left:905px;
+    width:224px;
+    top:0px;
+    text-align:left;
 }
-#mainContent
-{
 
+#mainHeaderSignin li {
+    list-style-type:none;
+}
+#mainHeaderSignin a {
+    font-family: Georgia, serif, Times;
+	font-size: 18px;
+    color: #363636; 
+    }
+
+#mainHeaderSignin a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+#mainHeaderSignin a:hover {
+    color: #2d7ca6;
 }
 
 .emtable {

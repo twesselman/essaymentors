@@ -65,3 +65,6 @@
 {"ts":1363721489398,"patch":[[{"diffs":[[0,"{safe:fa"],[1,"lse"],[0,"});\r\nvar"]],"start1":867,"start2":867,"length1":16,"length2":19}]],"length":7713,"saved":false}
 {"ts":1363721584788,"patch":[[{"diffs":[[0,"dbserver"],[1,", {safe:false}"],[0,");\r\n\r\ndb"]],"start1":933,"start2":933,"length1":16,"length2":30}]],"length":7727,"saved":false}
 {"ts":1363721594611,"patch":[[{"diffs":[[0,"', 37987"],[-1,", {safe:false}"],[0,");\r\nvar "]],"start1":857,"start2":857,"length1":30,"length2":16}]],"length":7713,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1363810410312,"patch":[[{"diffs":[[0,"cripts'));\r\n"],[1,"  server.use(express.static(__dirname + '/scripts'));\r\n"],[0,"});\r\n\r\nvar d"]],"start1":782,"start2":782,"length1":24,"length2":79}]],"length":7768,"saved":false}
+{"ts":1363810415353,"patch":[[{"diffs":[[0,"dirname + '/"],[-1,"scripts"],[1,"table"],[0,"'));\r\n});\r\n\r"]],"start1":824,"start2":824,"length1":31,"length2":29}]],"length":7766,"saved":false}
+{"ts":1363811193833,"patch":[[{"diffs":[[0,");\r\n"],[-1,"  server.use(express.static(__dirname + '/table'));\r\n"],[0,"});\r"]],"start1":790,"start2":790,"length1":61,"length2":8}]],"length":7713,"saved":false}
