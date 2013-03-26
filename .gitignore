@@ -1,3 +1,4 @@
 $ cat .gitignore
 node_modules/
 .metadata/
+.c9revisions/
